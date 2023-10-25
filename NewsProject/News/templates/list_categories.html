@@ -1,0 +1,12 @@
+{% load news_tags %}
+{% get_list_categories as categories %}
+
+<div class="list-group">
+    {{ arg1 }} {{ arg2 }}
+    
+    {% for cat in categories %}
+      <a href="{{ cat.get_absolute_url }}" class="list-group-item list-group-item-action">{{ cat.title }} 
+        <span class="badge bg-primary roundet-pill" style="width: 30px; color: white;">{{ cat.cnt }}</span></a>
+    {% endfor %}
+</div>
+{% show_categories %}
